@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.central-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+}
+.mid-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    padding: 1.7rem;
+    height: auto;
+    width: 100vw;
+    gap: .5rem;
+}
+
+p,
+li{
+    font-size: 2em;
+}
+
+button{
+    width: 7rem;
+    height: 2rem;
+    padding: .5rem;
+    border-radius: .3rem;
+    background-color: rgb(47, 255, 231);
+    cursor: pointer;
+    align-self: flex-end;
+}
