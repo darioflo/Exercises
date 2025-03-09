@@ -15,6 +15,16 @@ console.log(esPalindrome("Oso"));
 console.log(esPalindrome("Hola"));
 console.log(esPalindrome("Ana"));
 
+function esCapicua(numero){
+    let numeroComparado = numero.toString().split("").reverse()
+    return numero === parseInt(numeroComparado.join(""))
+}
+
+console.log(esCapicua(556));
+console.log(esCapicua(555));
+console.log(esCapicua(5562));
+console.log(esCapicua(666));
+
 let fizzbuzz = () => {
     for (let i = 0; i < 99; i++) {
         if ( i % 3=== 0 ) {
@@ -109,7 +119,156 @@ const generarAcronimo = (frase) => {
 
 console.log(generarAcronimo("Not like us"));
 
-let test = "kkkk"
+function convertirAGeringoso(texto) {
+    let vocales = ["a","e","i","o","u"]
+    let textoModificado = texto.split("")
+    let textoGeringoso = []
+
+    textoModificado.forEach(element=>{
+      for (let index = 0; index < vocales.length; index++) {
+            if (element === vocales[index]) {
+                textoGeringoso.push(element)
+                textoGeringoso.push("p")
+            }
+      }
+      textoGeringoso.push(element)
+    })
+
+  return textoGeringoso.join("")
+  
+}
+
+
+console.log(convertirAGeringoso("Hola"));
+
+function numeroMayorYMenor(numbers) {
+    return [Math.max(...numbers), Math.min(...numbers)]
+}
+
+console.log(numeroMayorYMenor([1,2,3,4,5,6]));
 
 
 
+const filtrarEstudiantesAprobados = (estudiantes) => {
+    let estudiantesAprobados = []
+
+  estudiantes.forEach(element=>{
+      let suma = element.calificaciones.reduce((acumulado,valorActual) => acumulado + valorActual,0)
+      let promedio = suma / element.calificaciones.length
+
+      if (promedio > 70) {
+          estudiantesAprobados.push(element.nombre)
+      }
+  })
+  return estudiantesAprobados
+};
+
+console.log(filtrarEstudiantesAprobados(estudiantes = [
+    { nombre: "Juan", calificaciones: [80, 90, 85] },
+    { nombre: "María", calificaciones: [70, 60, 75] },
+    { nombre: "Pedro", calificaciones: [90, 85, 95] },
+    { nombre: "Ana", calificaciones: [60, 75, 80] }
+  ]));
+
+
+  function filterEvenNumbers(arr) {
+    return arr.filter(element => element % 2 === 0)
+   }
+
+   function sumArray(arr) {   
+    return arr.reduce((acumulado,valorActual)=>acumulado+valorActual,0)
+  }
+
+    function duplicarArray(arr){
+    let arregloDuplicado = []
+
+    arr.forEach((element)=>{
+        arregloDuplicado.push(element)
+        arregloDuplicado.push(element)
+    })
+
+    return arregloDuplicado
+}
+
+console.log(duplicarArray([1,2,3,4,5]));
+
+
+function calcularFactorial(numero){
+    let factorial = 1
+        while (numero >= 1) {
+            factorial *= numero
+            numero --
+        }
+    return factorial
+  }
+
+  console.log(calcularFactorial(5));
+  
+
+  function sumaDePrimos(num){
+    let primosMenores = []
+  
+    for (let index = 0; index < num; index++) {
+        if (esPrimo(index)) {
+          primosMenores.push(index)
+        }
+    }
+    return primosMenores.reduce((acumulado,valorActual)=> acumulado + valorActual,0)
+  }
+
+  console.log(sumaDePrimos(20));
+  
+
+  function esPerfecto(num){
+    let numeros = []
+    for (let index = 1; index < num; index++) {
+      if (num % index === 0 ) {
+          numeros.push(index)
+      }
+    }
+  return num === numeros.reduce((acumulado,valorActual)=> acumulado +valorActual,0)
+}
+
+console.log(esPerfecto(18));
+console.log(esPerfecto(12));
+console.log(esPerfecto(10));
+console.log(esPerfecto(6));
+
+
+
+function armstrong(numero){
+    let arregloNumeros = numero.toString().split("")
+    let arregloComparado = arregloNumeros.map(element=> Math.pow(element,arregloNumeros.length))
+
+    return numero === arregloComparado.reduce((acumulado,valorActual)=>acumulado+valorActual,0)
+}
+
+console.log(armstrong(371));
+console.log(armstrong(36));
+console.log(armstrong(651));
+
+function factorizacion(num) {
+    let divisoresPrimos = [];
+    for (let index = 2; index <= num; index++) {
+        if (num % index === 0 && esPrimo(index)) {
+            divisoresPrimos.push(index);
+            num /= index;
+            index = 1; // Reiniciar el índice para verificar el mismo factor nuevamente
+        }
+    }
+    return divisoresPrimos;
+}
+
+  console.log(factorizacion(12));
+  
+
+  function sumarHasta(numero) {
+    let suma = 1
+  while (suma <= numero){
+    suma += suma
+  }
+
+  return suma
+}
+
+console.log(sumarHasta(12));
