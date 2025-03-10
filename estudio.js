@@ -263,12 +263,34 @@ function factorizacion(num) {
   
 
   function sumarHasta(numero) {
-    let suma = 1
-  while (suma <= numero){
-    suma += suma
+    let suma = []
+
+  for (let index = 0; index <= numero; index++) {
+        suma.push(index)        
   }
 
-  return suma
+  return suma.reduce((acumulado,valorActual)=> acumulado + valorActual, 0)
 }
+console.log(sumarHasta(5));
 
-console.log(sumarHasta(12));
+
+function sumarDigitos(numero) {
+    let suma = numero.toString().split("").map(Number)
+    console.log(suma);
+    return suma.reduce((acumulado, valorActual) => acumulado + valorActual, 0)
+  }
+
+
+  console.log(sumarDigitos(65));
+  
+
+  function sumaCubos(n) {
+    let cubos = []
+      for (let index = 0; index <= n; index++) {
+              cubos.push(Math.pow(index,3))
+      }
+      console.log(cubos);
+    return cubos.reduce((acumulado, valorActual) => acumulado + valorActual, 0)
+    }
+
+console.log(sumaCubos(3));
