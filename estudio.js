@@ -294,3 +294,20 @@ function sumarDigitos(numero) {
     }
 
 console.log(sumaCubos(3));
+
+
+
+let coincidencia = (palabra, frase)=> {
+    let palabras = frase.split(" ").map(w => w.replace(/[.,:;!?]/g, ""))
+    let cantVeces = 0
+    
+    
+    palabras.forEach((element)=>{
+        if (element === palabra) {
+            cantVeces ++
+        }
+    })
+    return cantVeces
+}
+
+console.log(coincidencia("palabra", "Aqui hay varias palabras: palabra, palabra, palabra"));
