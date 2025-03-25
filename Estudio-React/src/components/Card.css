@@ -1,0 +1,28 @@
+.card-box{
+    width: 13rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: .5rem;
+    border: medium solid #7E99A3;
+    border-radius: .3rem;
+    padding: .3rem;
+    box-shadow: 3px 3px 3px #7E99A3;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-box:hover{
+    transform: scale(1.1);
+}
+
+.card-box img {
+    width: 90%;
+    height: 70%;
+}
+
+.card-box p {
+    font-size: .8rem;
+}
