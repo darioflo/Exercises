@@ -249,25 +249,3 @@
     font-size: 0.75rem;
   }
 }
-
-.uno {
-  background-color: var(--primer-color);
-  color: var(--segundo-color);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.dos {
-  background-color: var(--segundo-color);
-  color: var(--primer-color);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.tres {
-  background-color: var(--tercer-color);
-  color: var(--primer-color);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
