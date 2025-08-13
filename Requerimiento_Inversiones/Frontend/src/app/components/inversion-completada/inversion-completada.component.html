@@ -1,0 +1,52 @@
+<div class="anuncio-inversion animate__animated animate__zoomIn">
+    <h2 class="titulo-anuncio">Confirmación:</h2>
+    <h3 class="subtitulo-anuncio">
+      Invertirás en <b>{{inversionActual?.nombre}}</b>
+    </h3>
+    <img src="ícono.png" alt="ícono" class="icono-central" style="width: 50px; height: 50px;">
+    <div class="detalle">
+      <div class="fila">
+        <p class="label">Cliente:</p>
+        <p class="valor" id="cliente">
+          {{clienteServicio.clienteSeleccionado?.nombre}} {{clienteServicio.clienteSeleccionado?.apellidoPaterno}} {{clienteServicio.clienteSeleccionado?.apellidoMaterno}}
+        </p>
+      </div>
+      <div class="fila">
+        <p class="label">Monto invertido:</p>
+        <p class="valor">$ {{servicioInversionCuenta.inversionCuentaActual.saldoInicial}}</p>
+      </div>
+      <div class="fila">
+        <p class="label">Plazo:</p>
+        <p class="valor">{{servicioInversionCuenta.inversionCuentaActual.plazo}} días</p>
+      </div>
+      <div class="fila">
+        <p class="label">Tasa ofrecida:</p>
+        <p class="valor">{{servicioInversionCuenta.inversionCuentaActual.tasa}} %</p>
+      </div>
+      <div class="fila">
+        <p class="label">Rendimiento anual:</p>
+        <p class="valor">$ {{servicioInversionCuenta.inversionCuentaActual.rendimientoAnual}}</p>
+      </div>
+      <div class="fila">
+        <p class="label">Instrucción de vencimiento:</p>
+        <p class="valor">{{servicioInversionCuenta.inversionCuentaActual.instruccionVencimiento}}</p>
+      </div>
+      <div class="fila">
+        <p class="label">Fecha de inicio:</p>
+        <p class="valor">{{servicioInversionCuenta.inversionCuentaActual.fechaInicio}}</p>
+      </div>
+      <div class="fila">
+        <p class="label">Fecha de cierre:</p>
+        <p class="valor">{{servicioInversionCuenta.inversionCuentaActual.fechaFin}}</p>
+      </div>
+      <div class="fila">
+        <p class="label">Cuenta asociada:</p>
+        <p class="valor" id="cuenta">
+          ID: {{this.clienteServicio.cuentaSeleccionada?.idCuenta}}<br />
+          <strong> Saldo en cuenta: $ {{this.clienteServicio.cuentaSeleccionada?.saldo}}</strong>
+        </p>
+      </div>
+      <button class="boton-continuar" (click)="irAlHome()">Regresar</button>
+    </div>
+  </div>
+  

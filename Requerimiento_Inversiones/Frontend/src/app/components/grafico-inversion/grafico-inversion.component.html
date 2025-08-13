@@ -1,0 +1,9 @@
+<div class="grafico-contenedor animate__animated animate__zoomIn">
+        <h2 class="titulo-inversion">{{ nombreInversion }}</h2>
+        <p class="descripcion-grafico">Proyección de la inversión con {{ plazo }} días y una tasa del {{ tasa }}%</p>
+        <canvas baseChart
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [type]="lineChartType">
+        </canvas>
+</div>

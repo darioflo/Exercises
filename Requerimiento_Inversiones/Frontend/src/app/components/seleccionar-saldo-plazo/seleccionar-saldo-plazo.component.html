@@ -1,0 +1,93 @@
+<div class="contenedor-formulario">
+  <div class="datos animate__animated animate__zoomIn">
+    <h3 class="nombre-inversion">{{ inversionActual?.nombre }}</h3>
+    <p class="nombre-cliente">
+      {{ servicioCliente.clienteSeleccionado?.nombre }}
+      {{ servicioCliente.clienteSeleccionado?.apellidoPaterno}}
+    </p>
+    <div class="cuenta-asociada-flex">
+      <img src="tarjeta.png" alt="tarjeta" style="width: 50px; height: 50px;">
+      <div class="cuenta-asociada-info">
+        <p class="cuenta-asociada-texto">
+          Cuenta asociada: {{ servicioCliente.cuentaSeleccionada?.idCuenta }}
+        </p>
+        <p class="cuenta-asociada-texto">
+          Tipo cuenta: {{ servicioCliente.cuentaSeleccionada?.tipoCuenta }}
+        </p>
+        <p class="monto-disponible">
+          Monto disponible: ${{ servicioCliente.cuentaSeleccionada?.saldo }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <form
+    *ngIf="paso === 1"
+    [formGroup]="formMonto"
+    (submit)="enviarMonto($event)"
+    class="formulario animate__animated animate__zoomIn"
+  >
+  <div class="grupo-formulario sombreado">
+    <label for="saldo" class="etiqueta">Monto a invertir (MXN):</label>
+    <div class="input-con-simbolo">
+      <span class="simbolo">$</span>
+      <input
+        type="number"
+        id="saldo"
+        formControlName="saldo"
+        class="campo"
+        placeholder="Ingresa tu monto"
+        min="1000"
+      />
+    </div>
+  </div>
+      <button type="submit" class="boton-continuar">Continuar</button>
+      <button type="button" class="boton-continuar" (click)="regresar()">
+        Regresar
+      </button>
+  </form>
+  <form
+    *ngIf="paso === 2"
+    [formGroup]="formPlazo"
+    (submit)="enviarPlazo($event)"
+    class="formulario"
+  >
+    <div class="grupo-formulario sombreado">
+      <p class="datos-previos">
+        <strong >Saldo a invertir:</strong>
+        ${{servicioInversionCuenta.inversionCuentaActual.saldoInicial}}
+      </p>
+      <div *ngIf="mostrar">
+        <p class="datos-previos">
+          <strong >Tasa estimada:</strong>
+          {{ servicioInversionCuenta.inversionCuentaActual.tasa}}%
+        </p>
+        <p class="datos-previos">
+          <strong>Rendimiento anual:</strong>
+          ${{ servicioInversionCuenta.inversionCuentaActual.rendimientoAnual }}
+        </p>
+      </div>
+    </div>
+    <div class="grupo-formulario sombreado">
+      <label for="plazo" class="etiqueta">Selecciona un plazo (días):</label>
+      <select
+      id="plazo"
+      formControlName="plazo"
+      class="campo"
+      (change)="actualizarTasaYRendimiento()"
+    >
+      <option [value]="15">15 días</option>
+      <option [value]="30">30 días</option>
+      <option [value]="45">45 días</option>
+      <option [value]="90">90 días</option>
+      <option [value]="120">120 días</option>
+      <option [value]="180">180 días</option>
+      <option [value]="365">365 días</option>
+    </select>
+    </div>
+    <button type="submit" class="boton-continuar derecha">Continuar</button>
+    <button type="button" class="boton-continuar" (click)="paso = 1">
+      ↩ Cambiar Monto
+    </button>
+  </form>
+</div>
+<app-error-component [tipoError]="tipoError" (cerrarVentana)="cerrarError()"></app-error-component>

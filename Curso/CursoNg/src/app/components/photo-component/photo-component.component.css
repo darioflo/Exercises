@@ -1,0 +1,27 @@
+.photo-content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    padding: .5rem;
+    gap: 1rem;
+}
+
+.photo-box{
+    width: 20rem;
+    height: 20rem;
+    border: 3px solid rgb(141, 141, 141);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.photo-box img{
+    width: 90%;
+    height: 70%;
+}

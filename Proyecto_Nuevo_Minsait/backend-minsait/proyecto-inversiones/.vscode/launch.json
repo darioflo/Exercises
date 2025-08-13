@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProyectoInversionesApplication<proyecto-inversiones>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.darioflo.proyecto_inversiones.ProyectoInversionesApplication",
+            "projectName": "proyecto-inversiones",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
